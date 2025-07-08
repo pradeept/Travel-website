@@ -8,6 +8,7 @@ import plane from "@/../public/plane.png";
 import * as motion from "motion/react-client";
 import Category from "../components/sections/Category";
 import Selling from "@/components/sections/Selling";
+import Steps from "@/components/sections/Steps";
 
 function Home() {
   return (
@@ -99,6 +100,7 @@ function Home() {
       </section>
       <Category />
       <Selling />
+      <Steps />
     </main>
   );
 }
