@@ -4,12 +4,17 @@ import vector1 from "@/../public/steps-section/vector1.png";
 import vector2 from "@/../public/steps-section/vector2.png";
 import vector3 from "@/../public/steps-section/vector3.png";
 import TravelCard from "../TravelCard";
-
+import * as motion from "motion/react-client";
 function Steps() {
   return (
-    <section className='grid grid-cols-2 gap-4 mx-5 lg:mx-10 mt-15 lg:mt-24 p-4'>
-        {/* Left section */}
-      <div>
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", duration: 0.6 }}
+      className='grid grid-cols-2 gap-4 mx-5 lg:mx-10 mt-15 lg:mt-28 p-4 '
+    >
+      {/* Left section */}
+      <div className='col-span-2 lg:col-span-1'>
         <h3 className='text-md text-[#5E6282]'>Easy and Fast</h3>
         <h1 className='text-blue-950 dark:text-blue-200 text-5xl font-serif font-bold'>
           Book Your Next Trip In 3 Easy Steps
@@ -53,10 +58,13 @@ function Steps() {
               alt='vector1'
               height={40}
               width={40}
+              placeholder='empty'
               className='p-3 bg-green-400 rounded-lg'
             />
             <div className='flex flex-col  justify-start'>
-              <h2 className='font-bold text-[#5E6282]'>Reach Airport on Selected Date</h2>
+              <h2 className='font-bold text-[#5E6282]'>
+                Reach Airport on Selected Date
+              </h2>
               <p className=' text-[#5E6282] max-w-80'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna,
                 tortor tempus.{" "}
@@ -66,10 +74,10 @@ function Steps() {
         </div>
       </div>
       {/* Right section */}
-      <div className="flex justify-center">
+      <div className='flex justify-center'>
         <TravelCard />
       </div>
-    </section>
+    </motion.section>
   );
 }
 

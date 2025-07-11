@@ -5,10 +5,14 @@ import traveller from "@/../public/traveller_gpt.png";
 import { PlayCircle } from "lucide-react";
 import underline from "@/../public/decore_underline.png";
 import plane from "@/../public/plane.png";
-import * as motion from "motion/react-client";
+// import * as motion from "motion/react-client";
 import Category from "../components/sections/Category";
 import Selling from "@/components/sections/Selling";
 import Steps from "@/components/sections/Steps";
+import Testimonials from "@/components/sections/Testimonials";
+import Subscribe from "@/components/sections/Subscribe";
+import Footer from "@/components/sections/Footer";
+import * as motion from "motion/react-client"
 
 function Home() {
   return (
@@ -23,8 +27,9 @@ function Home() {
           alt='vector'
         />
         <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y:100 }}
+          animate={{ opacity: 1, y:0 }}
+          transition={{type:"spring", duration:0.7}}
           className='flex flex-col gap-10 col-span-2 lg:gap-0 lg:col-span-1 place-content-center break-words text-center'
         >
           <h3 className='text-orange-500 dark:text-orange-300 font-bold'>
@@ -62,13 +67,13 @@ function Home() {
           </div>
         </motion.div>
         <motion.div
-          className='hidden lg:block lg:col-span-1 z-10 relative'
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          className='hidden lg:block lg:col-span-1 z-10 relative '
+          initial={{ opacity: 0, x:200 }}
+          whileInView={{ opacity: 1, x:0 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.4,
-            scale: { type: "spring", visualDuration: 0.4, bounce: 0.2 },
+            duration: 0.8,
+            scale: { type: "spring", bounce: 0.2 },
           }}
         >
           <Image
@@ -101,6 +106,9 @@ function Home() {
       <Category />
       <Selling />
       <Steps />
+      <Testimonials/>
+      <Subscribe />
+      <Footer />
     </main>
   );
 }

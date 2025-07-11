@@ -33,7 +33,7 @@ export default function RootLayout({
       className='bg-white dark:bg-gray-900'
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden` }
       >
         <NextThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <NavBar />

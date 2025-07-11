@@ -34,6 +34,7 @@ function CategoryCard({ data }: { data: categoryType }) {
           </h1>
           <h3 className='text-md text-[#5E6282]'>{data.description}</h3>
         </div>
+
         {/* Card hover effect */}
         <Image
           src={bgVector}
@@ -41,7 +42,8 @@ function CategoryCard({ data }: { data: categoryType }) {
           height={60}
           width={60}
           placeholder='empty'
-          className='hidden group-hover:block absolute bottom-[-20] left-[-10] z-[-1]'
+          className='absolute bottom-[-20px] left-[-10px] z-[-1] opacity-0 translate-y-4 scale-95 transition-all duration-300 delay-50
+                    group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100'
         />
       </div>
     </div>

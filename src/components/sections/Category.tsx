@@ -6,38 +6,41 @@ import vector1 from "@/../public/category-vectors/vector_1.png";
 import vector2 from "@/../public/category-vectors/vector_2.png";
 import vector3 from "@/../public/category-vectors/vector_3.png";
 import vector4 from "@/../public/category-vectors/vector_4.png";
+import * as motion from "motion/react-client";
 
 const categoryData = [
   {
-    id:1,
-    vector:vector1,
+    id: 1,
+    vector: vector1,
     heading: "Calculated Weather",
-    description: "Built Wicket longer admire do barton vanity itself do in it."
+    description: "Built Wicket longer admire do barton vanity itself do in it.",
   },
   {
-    id:2,
-    vector:vector2,
+    id: 2,
+    vector: vector2,
     heading: "Best Flights",
-    description: "Engrossed listening. Park gate sell they west hard for the."
+    description: "Engrossed listening. Park gate sell they west hard for the.",
   },
   {
-    id:3,
-    vector:vector3,
+    id: 3,
+    vector: vector3,
     heading: "Local Events",
-    description: "Barton vanity itself do in it. Preferd to men it engrossed listening. ."
+    description:
+      "Barton vanity itself do in it. Preferd to men it engrossed listening. .",
   },
   {
-    id:4,
-    vector:vector4,
+    id: 4,
+    vector: vector4,
     heading: "Customization",
-    description: "We deliver outsourced aviation services for military customers"
-  }
-]
+    description:
+      "We deliver outsourced aviation services for military customers",
+  },
+];
 
 function Category() {
   return (
-    <section className="mt-15 mx-5 lg:mx-10">
-      <div className="relative text-center">
+    <section className='mt-15 mx-5 lg:mx-10 '>
+      <div className='relative text-center'>
         <Image
           src={dots_vector}
           className='absolute top-0 right-5 lg:right-10 dark:opacity-15 dark:lg:opacity-80 z-[-10] '
@@ -53,11 +56,17 @@ function Category() {
           We Offer Best Services
         </h1>
       </div>
-      <div className="grid grid-cols-4 gap-3 mt-10">
-        {categoryData.map((item)=>{
-          return <CategoryCard data={item} key={item.id}/>
+      <motion.div
+        initial={{ opacity: 0, y: 200 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        className='grid grid-cols-4 gap-3 mt-10'
+      >
+        {categoryData.map((item) => {
+          return <CategoryCard data={item} key={item.id} />;
         })}
-      </div>
+      </motion.div>
     </section>
   );
 }

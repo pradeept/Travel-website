@@ -2,7 +2,7 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
-import * as motion from "motion/react-client"
+import {motion} from "framer-motion"
 
 function Toggle({ ...props }) {
   const { setTheme, theme } = useTheme();

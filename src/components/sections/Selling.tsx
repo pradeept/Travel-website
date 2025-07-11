@@ -71,7 +71,7 @@ function Selling() {
           TOP DESTINATIONS
         </h1>
       </div>
-      <div className="grid grid-cols-6 gap-5 mt-10 lg:mx-10"  >
+      <div className='grid grid-cols-6 gap-5 mt-10 lg:mx-10'>
         {topDestinations.map((item) => {
           return <DestinationCard data={item} key={item.id} />;
         })}
