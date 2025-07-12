@@ -9,7 +9,7 @@ function Subscribe() {
     <section className='lg:px-24 py-8 relative'>
       <div className='bg-purple-100 dark:bg-gray-800 rounded-t-2xl lg:p-20 p-10 flex flex-col gap-10 relative'>
         <div>
-          <h1 className='text-2xl md:text-3xl font-bold text-[#14183eb9] dark:text-slate-300 text-center break-words'>
+          <h1 className='text-2xl md:text-3xl font-bold select-none text-[#14183eb9] dark:text-slate-300 text-center break-words'>
             Subscribe to get information, latest news and other interesting
             offers about Jadoo!
           </h1>

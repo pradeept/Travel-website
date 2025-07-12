@@ -9,6 +9,7 @@ import logo2 from "@/../public/testimonials/logo2.png";
 import logo3 from "@/../public/testimonials/logo3.png";
 import logo4 from "@/../public/testimonials/logo4.png";
 import Image from "next/image";
+import * as motion from "motion/react-client"
 
 const testimonials: testimonialType[] = [
   {
@@ -47,7 +48,8 @@ export default function Testimonials() {
             TESTIMONIALS
           </p>
           <h1 className='text-blue-950 dark:text-blue-200 text-5xl font-serif font-bold'>
-            What People Say About Us.
+            What People Say About , Us.
+
           </h1>
         </div>
         {/* Right Section */}
@@ -59,7 +61,12 @@ export default function Testimonials() {
        
         className='w-full items-center justify-evenly flex gap-6 flex-wrap select-none'
       >
-        <div className='p-4 hover:shadow-lg rounded-2xl group'>
+        <motion.div
+        initial={{ y: 100, opacity:0 }}
+        whileInView={{ y: 0, opacity:1 }}
+        viewport={{once:true}}
+        transition={{ duration: 0.5, type: "spring", delay: 0.1 }}
+        className='p-4 hover:shadow-lg rounded-2xl group'>
           <Image
             src={logo1}
             width={140}
@@ -68,12 +75,13 @@ export default function Testimonials() {
             alt='logo-1'
             className='grayscale group-hover:grayscale-0'
           />
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className='p-4 hover:shadow-lg rounded-2xl group'
-          // initial={{ y: 200 }}
-          // animate={{ y: 0 }}
-          // transition={{ duration: 0.5, type: "spring", delay: 0.1 }}
+          initial={{ y: 100, opacity:0 }}
+          whileInView={{ y: 0, opacity:1 }}
+          viewport={{once:true}}
+          transition={{ duration: 0.5, type: "spring", delay: 0.1 }}
         >
           <Image
             src={logo2}
@@ -83,12 +91,13 @@ export default function Testimonials() {
             alt='logo-2'
             className='grayscale group-hover:grayscale-0'
           />
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className='p-4 hover:shadow-lg rounded-2xl group'
-          // initial={{ y: 200 }}
-          // animate={{ y: 0 }}
-          // transition={{ duration: 0.5, type: "spring", delay: 0.2 }}
+          initial={{ y: 100, opacity:0 }}
+          whileInView={{ y: 0, opacity:1 }}
+          viewport={{once:true}}
+          transition={{ duration: 0.5, type: "spring", delay: 0.2 }}
         >
           <Image
             src={logo3}
@@ -98,12 +107,13 @@ export default function Testimonials() {
             alt='logo-3'
             className='grayscale group-hover:grayscale-0'
           />
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className='p-4 hover:shadow-lg rounded-2xl group'
-          // initial={{ y: 200 }}
-          // animate={{ y: 0 }}
-          // transition={{ duration: 0.5, type: "spring", delay: 0.3 }}
+          initial={{ y: 100, opacity:0 }}
+          whileInView={{ y: 0, opacity:1 }}
+          viewport={{once:true}}
+          transition={{ duration: 0.5, type: "spring", delay: 0.3 }}
         >
           <Image
             src={logo4}
@@ -113,7 +123,7 @@ export default function Testimonials() {
             alt='logo-4'
             className='grayscale group-hover:grayscale-0'
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

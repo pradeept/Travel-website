@@ -60,7 +60,6 @@ function Category() {
         initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.2 }}
         className='grid grid-cols-4 gap-3 mt-10'
       >
         {categoryData.map((item) => {
